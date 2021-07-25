@@ -1,3 +1,4 @@
+
 import logging
 import os
 import sys
@@ -39,7 +40,7 @@ if ENV:
 
     JOIN_LOGGER = os.environ.get("JOIN_LOGGER", None)
     OWNER_USERNAME = os.environ.get("OWNER_USERNAME", None)
-    
+
     try:
         DRAGONS = set(int(x) for x in os.environ.get("DRAGONS", "").split())
         DEV_USERS = set(int(x) for x in os.environ.get("DEV_USERS", "").split())
@@ -78,8 +79,6 @@ if ENV:
     OPENWEATHERMAP_ID = os.environ.get("OPENWEATHERMAP_ID", None)
     VIRUS_API_KEY = os.environ.get("VIRUS_API_KEY", None)
     BOT_ID = int(os.environ.get("BOT_ID", None))
-    BOT_USERNAME = os.environ.get("BOT_USERNAME", None)
-    USERNAME_BOT = os.environ.get("USERNAME_BOT", "@TIANA\_PRINCE\_BOT")
     LOAD = os.environ.get("LOAD", "").split()
     NO_LOAD = os.environ.get("NO_LOAD", "translation").split()
     DEL_CMDS = bool(os.environ.get("DEL_CMDS", False))
@@ -92,19 +91,13 @@ if ENV:
     AI_API_KEY = os.environ.get("AI_API_KEY", None)
     WALL_API = os.environ.get("WALL_API", None)
     SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", None)
-    BOT_CHANNEL = os.environ.get("BOT_CHANNEL", None)
-    CHAT_GROUP = os.environ.get("CHAT_GROUP", None)
-    BOT_NAME = os.environ.get("BOT_NAME", None)
-    OWNER_USERNAME = os.environ.get("OWNER_USERNAME", None)
-    ALIVE_PIC = os.environ.get("ALIVE_PIC", None)
     SPAMWATCH_SUPPORT_CHAT = os.environ.get("SPAMWATCH_SUPPORT_CHAT", None)
     SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
     IBM_WATSON_CRED_URL = os.environ.get("IBM_WATSON_CRED_URL", None)
     IBM_WATSON_CRED_PASSWORD = os.environ.get("IBM_WATSON_CRED_PASSWORD", None)
-    tbot = TelegramClient(None, API_ID, API_HASH)
-    
+
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
-    CMD_HELP = {}
+
     try:
         BL_CHATS = set(int(x) for x in os.environ.get("BL_CHATS", "").split())
     except ValueError:
@@ -151,7 +144,7 @@ else:
     CERT_PATH = Config.CERT_PATH
     API_ID = Config.API_ID
     API_HASH = Config.API_HASH
-   
+
     DB_URI = Config.SQLALCHEMY_DATABASE_URI
     MONGO_DB_URI = Config.MONGO_DB_URI
     HEROKU_API_KEY = Config.HEROKU_API_KEY
