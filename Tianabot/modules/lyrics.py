@@ -11,7 +11,14 @@ ARQ_API_URL = "https://thearq.tech/"
 aiohttpsession = ClientSession()
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 
-@register(pattern="^/lyrics (.*)")
+from Tianabot import pbot as app
+from Tianabot.pyrogramee.errors import capture_err
+from Tianabot.pyrogramee.json_prettify import json_prettify
+from Tianabot.pyrogramee.fetch import fetch
+from pyrogram import filters
+
+@app.on_message(filters.command("covid") & ~filters.edited)
+@capture_err
 async def lyrics_func(_, message):
     if len(message.command) < 2:
         await message.reply_text("**Sike That's The Wrong Command Usage!** \nUse `/lyrics` (song name)")
