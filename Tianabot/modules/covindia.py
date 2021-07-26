@@ -2,14 +2,21 @@ from telegram import ParseMode, Update, Bot, Chat
 from telegram.ext import CommandHandler, MessageHandler, BaseFilter, run_async
 
 from Tianabot import dispatcher
+from Tianabot import pbot as app
+from Tianabot.pyrogramee.errors import capture_err
+from Tianabot.pyrogramee.json_prettify import json_prettify
+from Tianabot.pyrogramee.fetch import fetch
+from pyrogram import filters
+
 
 import requests
 
 import json
 from urllib.request import urlopen
 
-
-def covindia(bot: Bot, update: Update):
+@app.on_message(filters.command("covindia") & ~filters.edited)
+@capture_err
+async def covindia(bot: Bot, update: Update):
     message = update.effective_message
     state = ''
     confirmed = 0
@@ -42,7 +49,3 @@ def covindia(bot: Bot, update: Update):
             parse_mode = ParseMode.MARKDOWN,
             disable_web_page_preview = True
         )
-
-COV_INDIA_HANDLER = CommandHandler('covindia', covindia)
-
-dispatcher.add_handler(COV_INDIA_HANDLER)
