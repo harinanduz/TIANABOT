@@ -4,13 +4,12 @@ from Python_ARQ import ARQ
 from Tianabot import *
 from Tianabot.events import register
 
-aiohttpsession = ClientSession()
-arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
-
 #value
 ARQ_API_KEY = "QCRJIN-MJOBNZ-SPYKTN-NFZKZZ-ARQ"
 ARQ_API_URL = "https://thearq.tech/"
 
+aiohttpsession = ClientSession()
+arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 
 @register(pattern="^/lyrics (.*)")
 async def lyrics_func(_, message):
