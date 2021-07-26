@@ -275,7 +275,6 @@ __help__ = """
  • `/pat`*:* pats a user, or get patted
  • `/fun`*:* funny text,stricker and gif send
  • `/aq`*:* get random anime quote
- • `/lyrics <song name> `*:* text to voice
  • `/plet <text> `*:* text get funny emojify
  • `/tts <text> `*:* text to voice
  • `/8ball`*:* predicts using 8ball method
@@ -292,7 +291,6 @@ BLUETEXT_HANDLER = DisableAbleCommandHandler("bluetext", bluetext)
 RLG_HANDLER = DisableAbleCommandHandler("rlg", rlg)
 DECIDE_HANDLER = DisableAbleCommandHandler("decide", decide)
 EIGHTBALL_HANDLER = DisableAbleCommandHandler("8ball", eightball)
-LYRICS_HANDLER = DisableAbleCommandHandler("lyrics", lyrics)
 TABLE_HANDLER = DisableAbleCommandHandler("table", table)
 WEEBIFY_HANDLER = DisableAbleCommandHandler("weebify", weebify)
 
@@ -302,7 +300,6 @@ dispatcher.add_handler(SLAP_HANDLER)
 dispatcher.add_handler(PAT_HANDLER)
 dispatcher.add_handler(ROLL_HANDLER)
 dispatcher.add_handler(TOSS_HANDLER)
-dispatcher.add_handler(LYRICS_HANDLER)
 dispatcher.add_handler(SHRUG_HANDLER)
 dispatcher.add_handler(EIGHTBALL_HANDLER)
 dispatcher.add_handler(BLUETEXT_HANDLER)
@@ -314,10 +311,10 @@ dispatcher.add_handler(WEEBIFY_HANDLER)
 __mod_name__ = "FUN"
 __command_list__ = [
     "runs", "slap", "roll", "toss", "shrug", "bluetext", "rlg", "decide",
-    "table", "pat", "sanitize", "lyrics", "weebify",
+    "table", "pat", "sanitize", "weebify",
 ]
 __handlers__ = [
     RUNS_HANDLER, SLAP_HANDLER, PAT_HANDLER, ROLL_HANDLER, TOSS_HANDLER,
     SHRUG_HANDLER, BLUETEXT_HANDLER, RLG_HANDLER, DECIDE_HANDLER, TABLE_HANDLER,
-    SANITIZE_HANDLER, LYRICS_HANDLER, EIGHTBALL_HANDLER, WEEBIFY_HANDLER
+    SANITIZE_HANDLER, EIGHTBALL_HANDLER, WEEBIFY_HANDLER
 ]
