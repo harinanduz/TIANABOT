@@ -85,7 +85,6 @@ PM_START_TEXT = f"""Hello, My Name is {BOT_NAME}
 Hey , I am a Group Manager,
 Made specially for Managing Groups.
 
-This Probot was Created by [ℙℝ𝕀ℕℂ𝔼](https://t.me/devilsdad_prince)
 Click /help or use button below to find out more about how to use me to my full potential."""
 
 buttons = [
