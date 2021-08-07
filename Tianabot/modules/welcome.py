@@ -202,7 +202,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Devs
             elif new_mem.id in DEV_USERS:
                 update.effective_message.reply_text(
-                    "Be Patient! A member of the Emcee powerhouse just joined.",
+                    "Be Patient! A member of the Tiana powerhouse just joined.",
                     reply_to_message_id=reply,
                 )
                 welcome_log = (
@@ -1112,47 +1112,22 @@ user joined chat, user left chat.
  ❍ /welcomehelp*:* view more formatting information for custom welcome/goodbye messages.
 """
 
-NEW_MEM_HANDLER = MessageHandler(
-    Filters.status_update.new_chat_members, new_member, run_async=True
-)
-LEFT_MEM_HANDLER = MessageHandler(
-    Filters.status_update.left_chat_member, left_member, run_async=True
-)
-WELC_PREF_HANDLER = CommandHandler(
-    "welcome", welcome, filters=Filters.chat_type.groups, run_async=True
-)
-GOODBYE_PREF_HANDLER = CommandHandler(
-    "goodbye", goodbye, filters=Filters.chat_type.groups, run_async=True
-)
-SET_WELCOME = CommandHandler(
-    "setwelcome", set_welcome, filters=Filters.chat_type.groups, run_async=True
-)
-SET_GOODBYE = CommandHandler(
-    "setgoodbye", set_goodbye, filters=Filters.chat_type.groups, run_async=True
-)
-RESET_WELCOME = CommandHandler(
-    "resetwelcome", reset_welcome, filters=Filters.chat_type.groups, run_async=True
-)
-RESET_GOODBYE = CommandHandler(
-    "resetgoodbye", reset_goodbye, filters=Filters.chat_type.groups, run_async=True
-)
-WELCOMEMUTE_HANDLER = CommandHandler(
-    "welcomemute", welcomemute, filters=Filters.chat_type.groups, run_async=True
-)
+NEW_MEM_HANDLER = MessageHandler(Filters.status_update.new_chat_members, new_member)
+LEFT_MEM_HANDLER = MessageHandler(Filters.status_update.left_chat_member, left_member)
+WELC_PREF_HANDLER = CommandHandler("welcome", welcome, filters=Filters.group)
+GOODBYE_PREF_HANDLER = CommandHandler("goodbye", goodbye, filters=Filters.group)
+SET_WELCOME = CommandHandler("setwelcome", set_welcome, filters=Filters.group)
+SET_GOODBYE = CommandHandler("setgoodbye", set_goodbye, filters=Filters.group)
+RESET_WELCOME = CommandHandler("resetwelcome", reset_welcome, filters=Filters.group)
+RESET_GOODBYE = CommandHandler("resetgoodbye", reset_goodbye, filters=Filters.group)
+WELCOMEMUTE_HANDLER = CommandHandler("welcomemute", welcomemute, filters=Filters.group)
 CLEAN_SERVICE_HANDLER = CommandHandler(
-    "cleanservice", cleanservice, filters=Filters.chat_type.groups, run_async=True
+    "cleanservice", cleanservice, filters=Filters.group
 )
-CLEAN_WELCOME = CommandHandler(
-    "cleanwelcome", clean_welcome, filters=Filters.chat_type.groups, run_async=True
-)
-WELCOME_HELP = CommandHandler("welcomehelp", welcome_help, run_async=True)
-WELCOME_MUTE_HELP = CommandHandler("welcomemutehelp", welcome_mute_help, run_async=True)
-BUTTON_VERIFY_HANDLER = CallbackQueryHandler(
-    user_button, pattern=r"user_join_", run_async=True
-)
-CAPTCHA_BUTTON_VERIFY_HANDLER = CallbackQueryHandler(
-    user_captcha_button, pattern=r"user_captchajoin_\([\d\-]+,\d+\)_\(\d{4}\)", run_async=True
-)
+CLEAN_WELCOME = CommandHandler("cleanwelcome", clean_welcome, filters=Filters.group)
+WELCOME_HELP = CommandHandler("welcomehelp", welcome_help)
+WELCOME_MUTE_HELP = CommandHandler("welcomemutehelp", welcome_mute_help)
+BUTTON_VERIFY_HANDLER = CallbackQueryHandler(user_button, pattern=r"user_join_")
 
 dispatcher.add_handler(NEW_MEM_HANDLER)
 dispatcher.add_handler(LEFT_MEM_HANDLER)
@@ -1167,8 +1142,7 @@ dispatcher.add_handler(WELCOME_HELP)
 dispatcher.add_handler(WELCOMEMUTE_HANDLER)
 dispatcher.add_handler(CLEAN_SERVICE_HANDLER)
 dispatcher.add_handler(BUTTON_VERIFY_HANDLER)
-dispatcher.add_handler(WELCOME_MUTE_HELP)
-dispatcher.add_handler(CAPTCHA_BUTTON_VERIFY_HANDLER)
+
 
 
 __mod_name__ = "ARRIVAL"
