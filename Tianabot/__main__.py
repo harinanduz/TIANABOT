@@ -4,7 +4,7 @@ import re
 from sys import argv
 from typing import Optional
 
-from Tianabot import (
+from ♱ʂαƚαɳ ʂʅαყҽɾ♱ import (
     ALLOW_EXCL,
     CERT_PATH,
     DONATION_LINK,
@@ -31,9 +31,9 @@ from Tianabot import (
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from Tianabot.modules import ALL_MODULES
-from Tianabot.modules.helper_funcs.chat_status import is_user_admin
-from Tianabot.modules.helper_funcs.misc import paginate_modules
+from ♱ʂαƚαɳ ʂʅαყҽɾ♱.modules import ALL_MODULES
+from ♱ʂαƚαɳ ʂʅαყҽɾ♱.modules.helper_funcs.chat_status import is_user_admin
+from ♱ʂαƚαɳ ʂʅαყҽɾ♱.modules.helper_funcs.misc import paginate_modules
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
@@ -80,7 +80,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 
-PM_START_TEXT = f"""Hello, My Name is {BOT_NAME}
+PM_START_TEXT = f"""Hello, My Name is {♱ʂαƚαɳ ʂʅαყҽɾ♱}
 
 Hey , I am a Group Manager,
 Made specially for Managing Groups.
@@ -93,29 +93,29 @@ buttons = [
             text="➕️ 𝐀𝐃𝐃 𝐌𝐄 𝐓𝐎 𝐘𝐎𝐔𝐑 𝐆𝐑𝐎𝐔𝐏 ➕️", url=f"t.me/{BOT_USERNAME}?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="📱𝐈𝐍𝐅𝐎", callback_data="masha_"),
-        InlineKeyboardButton(text="⚜️𝐇𝐄𝐋𝐏", callback_data="help_back"),
+        InlineKeyboardButton(text="𝐈𝐍𝐅𝐎", callback_data="masha_"),
+        InlineKeyboardButton(text="𝐇𝐄𝐋𝐏", callback_data="help_back"),
     ],
    [
         InlineKeyboardButton(
-            text="🎵 𝐂𝐇𝐀𝐓𝐓𝐈𝐍𝐆 𝐆𝐑𝐎𝐔𝐏 🎧", url=f"http://t.me/{CHAT_GROUP}")
+            text=" 𝐂𝐇𝐀𝐓𝐓𝐈𝐍𝐆 𝐆𝐑𝐎𝐔𝐏", url=f"http://t.me/{CHAT_GROUP}")
    ],
    [
         InlineKeyboardButton(
-            text="✨ 𝐎𝐖𝐍𝐄𝐑 ✨", url=f"http://t.me/{OWNER_USERNAME}"),
+            text=" 𝐎𝐖𝐍𝐄𝐑 ", url=f"http://t.me/{@BLACKDEVIL_OF_TELEGRAM}"),
         InlineKeyboardButton(
-            text="⚜️ 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 ⚜️", url=f"https://t.me/{BOT_CHANNEL}"),
+            text=" 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 ", url=f"https://t.me/{BOT_CHANNEL}"),
     ],
     [  
-        InlineKeyboardButton(text="👥 𝐒𝐔𝐏𝐏𝐎𝐑𝐓 𝐆𝐑𝐎𝐔𝐏 👥", url=f"https://t.me/{SUPPORT_CHAT}"),
+        InlineKeyboardButton(text=" 𝐒𝐔𝐏𝐏𝐎𝐑𝐓 𝐆𝐑𝐎𝐔𝐏 ", url=f"https://t.me/{SUPPORT_CHAT}"),
     ], 
     
 ]
 
-TIANA_IMG = f"{ALIVE_PIC}"
+♱ʂαƚαɳ ʂʅαყҽɾ♱_IMG = f"{https://telegra.ph/file/ea6955176e1d7c36b0aaa.jpg}"
 
 HELP_STRINGS = f"""
-Hey There! My Name is {BOT_NAME}
+Hey There! My Name is {♱ʂαƚαɳ ʂʅαყҽɾ♱}
 
 • Main commands available:
  • /help: PM's you this message.
@@ -376,7 +376,7 @@ def Masha_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "masha_":
         query.message.edit_text(
-            text=f""" ℹ️ I'm {BOT_NAME}, a powerful group management bot built to help you manage your group easily. This Bots Created By PRINCE
+            text=f""" ℹ️ I'm {♱ʂαƚαɳ ʂʅαყҽɾ♱}, a powerful group management bot built to help you manage your group easily. This Bots Created By BLACK DEVIL
                  ❍ I can restrict users.
                  ❍ I can greet users with customizable welcome messages and even set a group's rules.
                  ❍ I have an advanced anti-flood system.
@@ -659,7 +659,7 @@ def donate(update: Update, context: CallbackContext):
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
         )
 
-        if OWNER_ID != 1663464481 and DONATION_LINK:
+        if OWNER_ID !=  1731331555 and DONATION_LINK:
             update.effective_message.reply_text(
                 "You can also donate to the person currently running me "
                 "[here]({})".format(DONATION_LINK),
