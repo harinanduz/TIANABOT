@@ -1,7 +1,7 @@
 # TIANA PRO-BOT
 ▪️ THIS IS PRO-GROUP MANAGER BOT.
 
-![Deploy] (https://telegra.ph/file/ea6955176e1d7c36b0aaa.jpg)
+![Deploy](https://telegra.ph/file/ea6955176e1d7c36b0aaa.jpg)
 
 ## INFORMATION
 
